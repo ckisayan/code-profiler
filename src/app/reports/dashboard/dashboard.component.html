@@ -1,0 +1,69 @@
+<div style="padding-top: 50px; padding-left: 50px;">
+    <div style=" white-space: nowrap;">
+        <div style="display: inline-block;" class="custom-card">
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>Java & .NET Modernization</mat-card-title>
+                    <mat-card-subtitle>50</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions>
+                    <button mat-button>Learn More</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div style="display: inline-block; ">&nbsp; &nbsp; &nbsp;</div>
+        <div style="display: inline-block;" class="custom-card">
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>COBOL / RPG Modernization</mat-card-title>
+                    <mat-card-subtitle>25</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions>
+                    <button mat-button>Learn More</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div style="display: inline-block; ">&nbsp; &nbsp; &nbsp;</div>
+        
+        <div style="display: inline-block;" class="custom-card">
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>SAP Modernization</mat-card-title>
+                    <mat-card-subtitle>5</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions>
+                    <button mat-button>Learn More</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div style="display: inline-block;">&nbsp; &nbsp; &nbsp;</div>
+        <div style="display: inline-block;" class="custom-card">
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>All Others</mat-card-title>
+                    <mat-card-subtitle>50</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions>
+                    <button mat-button>Learn More</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+    <br>
+
+    <!--https://krish512.github.io/ng4-charts/-->
+
+    <div style=" white-space: nowrap; width: 800px; height: 500px; ">
+        <div style="display: inline-block;  width: 800px; height: 500px;">
+            <canvas baseChart [datasets]="pieChartData" [labels]="pieChartLabels" [type]="pieChartType"
+                [plugins]="pieChartPlugins" [options]="chartOptions" [legend]="true"></canvas>
+        </div>
+        <div style="display: inline-block;">&nbsp;</div>
+        <div style="display: inline-block; width: 800px; height: 500px;">
+            <canvas baseChart [datasets]="projectPhaseData" [labels]="projectPhasesLabel" [type]="projectPhaseChartType"
+            [plugins]="[chartPhaseOptions]" 
+            [options]="chartPhaseOptions" [legend]="true">
+            </canvas>
+        </div>
+    </div>
+</div>
