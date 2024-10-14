@@ -5,3 +5,36 @@
     width: 20%;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
 }
+.new-project-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .new-project-button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+  }
+  
+  .new-project-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+  
+  .new-project-button .icon {
+    font-size: 18px;
+    margin-right: 10px;
+    line-height: 0;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    /*align-items: center;  Optional: if you want to center vertically inside the container */
+    /*height: 100vh;  Optional: makes the container full screen height if needed */
+  }

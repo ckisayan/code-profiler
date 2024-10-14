@@ -8,29 +8,43 @@ import { DashboardComponent } from './reports/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+// Optional Ripple effect module
+import { MatRippleModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { ProjectConfigurationComponent } from './project/project-configuration/project-configuration.component';
 
 const appRoutes: Routes = [{
   path: '', component: DashboardComponent,
+  
+  
   children: [
-    { path: '', component: DashboardComponent },
-  ]
-}
+      { path: '', component: DashboardComponent },
+    ],
+
+  },
+  {
+    path: 'project-configuration', component: ProjectConfigurationComponent,
+  }
+
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProjectConfigurationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,        
+    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatCardModule, 
-    MatButtonModule,   
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
     RouterModule.forRoot(appRoutes),
     NgChartsModule
   ],
