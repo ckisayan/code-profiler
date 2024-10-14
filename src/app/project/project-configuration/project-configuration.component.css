@@ -1,0 +1,43 @@
+.project-config-card {
+
+    width: 1000px;
+    margin: 20px auto;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    justify-content: space-between; /* Adjusts spacing between fields */  
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .project-config-form {    
+    width: 800px;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    justify-content: space-between; /* Adjusts spacing between fields */  
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .full-width {
+    width: 45%;    
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+  .inline-form-field {
+    white-space: nowrap;
+    display: inline-block;
+    width: 400px; /* Adjusts the width of each form field */
+    margin-bottom: 20px;
+  }
+  mat-radio-button {
+    margin-bottom: 10px;
+  }
+
+  button {
+    
+    margin-left: 10px;
+  }
+
+  .folder-field, .file-field {
+    display: inline-block;
+    margin-left: 10px;
+  }

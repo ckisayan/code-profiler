@@ -14,6 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { ProjectConfigurationComponent } from './project/project-configuration/project-configuration.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 const appRoutes: Routes = [{
   path: '', component: DashboardComponent,
@@ -46,7 +50,12 @@ const appRoutes: Routes = [{
     MatIconModule,
     MatRippleModule,
     RouterModule.forRoot(appRoutes),
-    NgChartsModule
+    NgChartsModule,       
+    MatFormFieldModule,       // Import form field module
+    MatInputModule,           // Import input module
+    MatSelectModule,
+    MatRadioModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,107 @@
-<p>project-configuration works!</p>
+<form>
+    <div style="padding-top: 50px; padding-left: 50px;">
+
+        <mat-card class="project-config-card" style="white-space: nowrap;">
+            <mat-card-title>Project Configuration</mat-card-title>
+            &nbsp;
+            <mat-form-field appearance="outline" class="full-width" style="display: inline-block;">
+                <mat-label>Project Name</mat-label>
+                <input matInput placeholder="Enter project name" [(ngModel)]="projectName" name="projectName" required>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field appearance="outline" class="full-width" style="display: inline-block;">
+                <mat-label>Customer Name</mat-label>
+                <input matInput placeholder="Enter customer name" [(ngModel)]="customerName" name="customerName"
+                    required>
+            </mat-form-field>
+
+        </mat-card>
+        <br>
+        <mat-card class="project-config-card" style="white-space: nowrap;">
+            <mat-card-title>Code & App Configuration</mat-card-title>
+            &nbsp;
+
+            <mat-form-field appearance="outline" class="full-width" style="display: inline-block;">
+                <mat-label>Source System Type</mat-label>
+                <mat-select [(ngModel)]="sourceSystem" name="sourceSystem" required
+                    placeholder="Select Source System Type">
+                    <mat-option *ngFor="let source of sourceSystems" [value]="source">
+                        {{ source }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field appearance="outline" class="full-width" style="display: inline-block;">
+                <mat-label>Target System Type</mat-label>
+                <mat-select [(ngModel)]="targetSystem" name="targetSystem" required
+                    placeholder="Select Target System Type ">
+                    <mat-option *ngFor="let target of targetSystems" [value]="target">
+                        {{ target }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card>
+        <br>
+        <mat-card class="project-config-card">
+            <mat-card-title>Select Source Code</mat-card-title>
+            <!-- Radio buttons to choose input method -->
+            <mat-radio-group [(ngModel)]="sourceSelection" name="sourceSelection">
+                <mat-radio-button value="repository" style="display: inline-block;">Code Repository</mat-radio-button>
+                <mat-form-field *ngIf="sourceSelection === 'repository'" appearance="outline" class="inline-field"
+                    style="width: 200px;">
+                    <mat-label>Code Repository</mat-label>
+                    <input matInput placeholder="Enter code repository URL" [(ngModel)]="codeRepository"
+                        name="codeRepository">
+                </mat-form-field>
+                <button mat-raised-button color="primary" *ngIf="sourceSelection === 'repository'"
+                    (click)="onSetupClick()">Setup</button>
+                <br>
+
+                <mat-radio-button value="folder" style="display: inline-block;">Source Code Folder</mat-radio-button>
+                <div *ngIf="sourceSelection === 'folder'" class="folder-field">
+                    <input type="file" webkitdirectory directory (change)="onFolderSelected($event)"
+                        style="display: none;" #folderInput>
+                    <button mat-button (click)="folderInput.click()">Browse Folder</button>
+                    <span>{{ selectedFolder || 'No folder selected' }}</span>
+                </div>
+
+                <br>
+
+                <mat-radio-button value="file" style="display: inline-block;">Single File</mat-radio-button>
+                <div *ngIf="sourceSelection === 'file'" class="file-field">
+                    <input type="file" (change)="onFileSelected($event)" style="display: none;" #fileInput>
+                    <button mat-button (click)="fileInput.click()">Browse File</button>
+                    <span>{{ selectedFile || 'No file selected' }}</span>
+                </div>
+
+            </mat-radio-group>
+        </mat-card>
+        <br>
+        <mat-card class="project-config-card">
+            <mat-card-title>Database</mat-card-title>
+            <div class="upload-fields">
+                <div class="upload-field">
+                    <input type="file" (change)="onModelFileSelected($event)" style="display: none;" #modelFileInput>
+                    <button mat-button (click)="modelFileInput.click()">Browse Database Model</button>
+                    <span>{{ selectedModelFile || 'No model file selected' }}</span>
+                </div>
+
+                <div class="upload-field">
+                    <input type="file" (change)="onSampleDataSelected($event)" style="display: none;" #sampleDataInput>
+                    <button mat-button (click)="sampleDataInput.click()">Browse Sample Data</button>
+                    <span>{{ selectedSampleData || 'No sample data selected' }}</span>
+                </div>
+            </div>
+        </mat-card>
+        <br>
+        <mat-card class="project-config-card">
+            <mat-card-title>Production Logs</mat-card-title>
+            <div class="log-upload-field">
+                <input type="file" (change)="onLogFileSelected($event)" style="display: none;" #logFileInput>
+                <button mat-button (click)="logFileInput.click()">Browse Log File</button>
+                <span>{{ selectedLogFile || 'No log file selected' }}</span>
+            </div>
+        </mat-card>
+
+    </div>
+</form>
