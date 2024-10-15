@@ -13,22 +13,38 @@ export class ProfilerResultsSnapshotComponent {
   //public pieChartData: number[] = [5, 70, 220];
 
   public pieChartData: ChartDataset[] = [
-    { data: [5, 55, 125], backgroundColor: ['#ff0000', '#ffa500', '#1e90ff'],label: 'Project Type' },
+    { data: [9, 35, 65], backgroundColor: ['#ff0000', '#ffa500', '#1e90ff'],label: 'Project Type' },
   ];     
   public pieChartType: ChartType = 'pie';
+ 
   public pieChartOptions: any = {
+    layout: {},
+    indexAxis: 'x',
     responsive: true,
     legend: {
       position: 'top',
     },
     plugins: {
-      datalabels: {
-        color: '#fff',
-        font: {
-          size: 16,
-        },
+      title: {display: true, text: 'Severity Types'}, 
+      legend: {display: true, align: 'start', position: 'bottom',
+        labels: {
+          usePointStype: true,
+          padding: 10
+        }
       },
-    },
+      datalabels: {
+        color: '#ffffff',
+        font: {
+          size:30,
+          weight: 'bold',
+          family: 'Arial',          
+          color: '#ffffff',
+        },     
+        formatter: (value: number) => {
+          return value; // Display value directly
+        },
+      }
+    } 
   };
   public pieChartColors: any[] = [
     {
@@ -38,5 +54,9 @@ export class ProfilerResultsSnapshotComponent {
 
   ngOnInit(){
     console.log("starting profiler results snapshot component...");
+  }
+  constructor() {
+    // Register the plugin globally
+    Chart.register(ChartDataLabels);
   }
 }

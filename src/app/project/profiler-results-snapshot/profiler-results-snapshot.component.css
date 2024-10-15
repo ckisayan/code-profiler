@@ -16,6 +16,7 @@
 .code-snapshot-card,
 .snapshot-card {
     width: 45%; /* Adjust the width to fit two cards in a row */
+    
     margin: 0 10px; /* Optional margin for spacing between cards */
 }
 
@@ -66,7 +67,7 @@
   }
 
   canvas {
-    max-width: 400px;
+    max-width: 600px;
     margin: auto;
   }
   

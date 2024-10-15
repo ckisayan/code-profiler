@@ -81,7 +81,10 @@
         <div class="severity-chart">
             <h2>Severity Breakdown</h2>
             <canvas baseChart [datasets]="pieChartData" [labels]="pieChartLabels" [type]="pieChartType"
-                [options]="pieChartOptions"></canvas>
+                [options]="pieChartOptions" [legend]="true"  [plugins]="[pieChartOptions]" ></canvas>
+
+          
+                
         </div>
     </div>
 </div>
