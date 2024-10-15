@@ -29,6 +29,7 @@ import {MatListModule} from '@angular/material/list';
 import { ProfilerResultsComponentReportComponent } from './project/profiler-results-component-report/profiler-results-component-report.component';
 import { ProfilerResultsUxReportComponent } from './project/profiler-results-ux-report/profiler-results-ux-report.component';
 import { ProfilerResultsKnowledgeGraphComponent } from './project/profiler-results-knowledge-graph/profiler-results-knowledge-graph.component';
+import { PreviousProfilerResultsComponent } from './project/previous-profiler-results/previous-profiler-results.component';
 const appRoutes: Routes = [{
   path: '', component: DashboardComponent,
   
@@ -40,6 +41,9 @@ const appRoutes: Routes = [{
   },
   {
     path: 'project-configuration', component: ProjectConfigurationComponent,
+  },
+  {
+    path: 'previous-profiler-results', component: PreviousProfilerResultsComponent,
   },
   {
     path: 'profiler-configuration', component: ProfilerConfigurationComponent,
@@ -69,7 +73,8 @@ const appRoutes: Routes = [{
     ProfilerResultsSnapshotComponent,
     ProfilerResultsComponentReportComponent,
     ProfilerResultsUxReportComponent,
-    ProfilerResultsKnowledgeGraphComponent
+    ProfilerResultsKnowledgeGraphComponent,
+    PreviousProfilerResultsComponent
   ],
   imports: [
     BrowserModule,

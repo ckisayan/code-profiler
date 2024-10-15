@@ -38,3 +38,18 @@
     /*align-items: center;  Optional: if you want to center vertically inside the container */
     /*height: 100vh;  Optional: makes the container full screen height if needed */
   }
+
+
+.secondary-button {
+  background-color: #f2e68e; 
+  color: #333; /* Dark text color for contrast */
+  padding: 10px; /* Padding for a better appearance */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.secondary-button:hover {
+  background-color: yellow; /* Slightly darker yellow on hover */
+  color: #000; /* Change text color to black on hover */
+}

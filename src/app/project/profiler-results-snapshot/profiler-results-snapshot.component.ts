@@ -26,7 +26,7 @@ export class ProfilerResultsSnapshotComponent {
     },
     plugins: {
       title: {display: true, text: 'Severity Types'}, 
-      legend: {display: true, align: 'start', position: 'bottom',
+      legend: {display: true, align: 'middle', position: 'bottom',
         labels: {
           usePointStype: true,
           padding: 10
