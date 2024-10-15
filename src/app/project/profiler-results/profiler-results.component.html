@@ -1,0 +1,103 @@
+<table class="styled-table">
+    <tr>
+        <td class="sidebar" style="width: 15%; vertical-align: top;">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Favorites
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            *
+                            <mat-icon>favorites</mat-icon>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list routerLinkActive="true">
+                        <a mat-list-item [routerLink]="['/profiler-results/snapshot']">App Overview</a>
+                        <a mat-list-item>My Report 1 related to other</a>
+                        <a mat-list-item>My Report 2</a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Code
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            *
+                            <mat-icon>settings</mat-icon>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item [routerLink]="['/profiler-results/snapshot']">Profiler Snapshot</a>
+                        <a mat-list-item [routerLink]="['/profiler-results/snapshot']">Analysis Report</a>
+                        <a mat-list-item [routerLink]="['/profiler-results/snapshot']">Code Review Report</a>
+                        <a mat-list-item [routerLink]="['/profiler-results/component-report']">Component Report</a>
+                        <a mat-list-item [routerLink]="['/profiler-results/snapshot']">Domain Model</a>
+                        <a mat-list-item [routerLink]="['/profiler-results/snapshot']">Use Case Report</a>
+                        <a mat-list-item [routerLink]="['/profiler-results/ux']">UX Report</a>
+                        <a mat-list-item [routerLink]="['/profiler-results/knowledge-graph']">Knowldege Graph</a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Process
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            *
+                            <mat-icon>dashboard</mat-icon>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list routerLinkActive="active"> <a mat-list-item
+                            [routerLink]="['/profiler-results/snapshot']">Level Zero Process</a>
+
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            System Integration
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            *
+                            <mat-icon>integration_instructions</mat-icon>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list routerLinkActive="active"> <a mat-list-item
+                            [routerLink]="['/profiler-results/snapshot']">First Level </a>
+
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Database 
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            *
+                            <mat-icon>schema</mat-icon>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list routerLinkActive="active"> <a mat-list-item
+                            [routerLink]="['/profiler-results/snapshot']">Database Model </a>
+
+                    </mat-nav-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </td>
+        <td class="content" align="center" style="width: 75%;">
+            <router-outlet></router-outlet>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="button-container">
+                <button mat-button class="secondary-button" [routerLink]="['/profiler-configuration']">
+                    <mat-icon>arrow_back</mat-icon> Back
+                </button>
+                &nbsp; &nbsp;            
+            </div>
+        </td>
+    </tr>
+</table>

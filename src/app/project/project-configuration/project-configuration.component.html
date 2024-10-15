@@ -10,7 +10,7 @@
             </mat-form-field>
             &nbsp;
             <mat-form-field appearance="outline" class="full-width" style="display: inline-block;">
-                <mat-label>Customer Name</mat-label>
+                <mat-label>Customer (or Department) Name</mat-label>
                 <input matInput placeholder="Enter customer name" [(ngModel)]="customerName" name="customerName"
                     required>
             </mat-form-field>
@@ -54,16 +54,20 @@
                         name="codeRepository">
                 </mat-form-field>
                 <button mat-raised-button color="primary" *ngIf="sourceSelection === 'repository'"
-                    (click)="onSetupClick()">Setup</button>
+                    (click)="onSetupClick()"><mat-icon>settings</mat-icon>Configure</button>
                 <br>
 
-                <mat-radio-button value="folder" style="display: inline-block;">Source Code Folder</mat-radio-button>
-                <div *ngIf="sourceSelection === 'folder'" class="folder-field">
-                    <input type="file" webkitdirectory directory (change)="onFolderSelected($event)"
-                        style="display: none;" #folderInput>
-                    <button mat-button (click)="folderInput.click()">Browse Folder</button>
-                    <span>{{ selectedFolder || 'No folder selected' }}</span>
-                </div>
+                <mat-radio-button value="folder" style="display: inline-block;">Source Code Storage
+                    Acct</mat-radio-button>
+                <mat-form-field *ngIf="sourceSelection === 'folder'" appearance="outline" class="inline-field"
+                    style="width: 200px;">
+                    <mat-label>Source Code Storage Acct</mat-label>
+                    <input matInput placeholder="Enter source code folder path" [(ngModel)]="sourceFolder"
+                        name="sourceFolder">
+                </mat-form-field>
+                <button mat-raised-button color="primary" *ngIf="sourceSelection === 'folder'"
+                    (click)="onSetupClick()"><mat-icon>settings</mat-icon>Configure</button>
+
 
                 <br>
 
@@ -79,19 +83,29 @@
         <br>
         <mat-card class="project-config-card">
             <mat-card-title>Database</mat-card-title>
-            <div class="upload-fields">
-                <div class="upload-field">
-                    <input type="file" (change)="onModelFileSelected($event)" style="display: none;" #modelFileInput>
-                    <button mat-button (click)="modelFileInput.click()">Browse Database Model</button>
-                    <span>{{ selectedModelFile || 'No model file selected' }}</span>
-                </div>
-
-                <div class="upload-field">
-                    <input type="file" (change)="onSampleDataSelected($event)" style="display: none;" #sampleDataInput>
-                    <button mat-button (click)="sampleDataInput.click()">Browse Sample Data</button>
-                    <span>{{ selectedSampleData || 'No sample data selected' }}</span>
-                </div>
+            <div>
+                <div class="upload-fields">
+                    <mat-form-field appearance="outline" class="inline-field" style="width: 450px;"> 
+                        <mat-label>Select Storage Account for Database Source Code</mat-label>
+                        <mat-select [(ngModel)]="selectedStorageAccount" name="storageAccount">
+                            <mat-option *ngFor="let account of storageAccounts" [value]="account">
+                                {{ account }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                
+                <button mat-raised-button color="primary" (click)="onStorageAccountSelect()">
+                    <mat-icon>add</mat-icon>Setup New</button>
             </div>
+            </div>
+            <br>
+
+            <div class="upload-field">
+                <input type="file" (change)="onSampleDataSelected($event)" style="display: none;" #sampleDataInput>
+                <button mat-button (click)="sampleDataInput.click()">Browse Sample Data</button>
+                <span>{{ selectedSampleData || 'No sample data selected' }}</span>
+            </div>
+
         </mat-card>
         <br>
         <mat-card class="project-config-card">
@@ -102,6 +116,11 @@
                 <span>{{ selectedLogFile || 'No log file selected' }}</span>
             </div>
         </mat-card>
-
     </div>
+    
 </form>
+<div class="button-container">
+    <button mat-raised-button color="primary" [routerLink]="['/profiler-configuration']" class="new-project-button">
+        <mat-icon>add</mat-icon> Configure the Profiler 
+      </button>
+</div>

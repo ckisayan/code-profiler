@@ -1,0 +1,87 @@
+<div class="profiler-results">
+    <h2>Profiler Results Snapshot</h2>
+
+    <div class="cards-container">
+        <!-- First Row of Cards -->
+        <mat-card class="code-snapshot-card">
+            <mat-card-header>
+                <mat-card-title>Debt</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="snapshot-item">
+                    <mat-icon>description</mat-icon>
+                    <span>Lines of Code: 14,925</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>comment</mat-icon>
+                    <span>Lines of Comments: 300</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>visibility</mat-icon>
+                    <span>Readability: Average</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>grade</mat-icon>
+                    <span>Rating: C</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="snapshot-card">
+            <mat-card-header>
+                <mat-card-title>Types</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="snapshot-item">
+                    <mat-icon>code</mat-icon>
+                    <span>Source Code Files: 481</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>functions</mat-icon>
+                    <span>Methods: 2,756</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>view_list</mat-icon>
+                    <span>Fields: 826</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>integration_instructions</mat-icon>
+                    <span>Third Party Elements: 1,456</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="cards-container">
+        <!-- Second Row of Cards -->
+        <mat-card class="snapshot-card">
+            <mat-card-header>
+                <mat-card-title>Maintainability</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="snapshot-item">
+                    <mat-icon>bar_chart</mat-icon>
+                    <span>Cyclometric Complexity: 161</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>merge_type</mat-icon>
+                    <span>Class Coupling: 92</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>account_tree</mat-icon>
+                    <span>Debt of Inheritance: 3</span>
+                </div>
+                <div class="snapshot-item">
+                    <mat-icon>trending_down</mat-icon>
+                    <span>Maintainability Index: 54</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <div class="severity-chart">
+            <h2>Severity Breakdown</h2>
+            <canvas baseChart [datasets]="pieChartData" [labels]="pieChartLabels" [type]="pieChartType"
+                [options]="pieChartOptions"></canvas>
+        </div>
+    </div>
+</div>

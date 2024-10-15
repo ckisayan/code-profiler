@@ -1,0 +1,102 @@
+<div style="padding-top: 30px; padding-left: 50px; width: 80%;">
+    <mat-card class="profiler-config-card">
+        <mat-card-title class="profiler-title">Profiler Configuration</mat-card-title>
+        <hr>
+        <div class="profiler-options-container alternate-color-1">
+            <div class="profiler-option">
+                <mat-checkbox [(ngModel)]="codeDecompositionSelected">Code Decomposition</mat-checkbox>
+            </div>
+            <div class="profiler-description">
+                <p>Summary of what the code does, how many lines of code, number of classes, average number of lines of
+                    code per class, number of classes more than 2000 lines of code, number of functions and
+                    methods, redundent code, legacy libraries, dependencies, unit test code coverage, number of
+                    transaction screens, number of dashboards and operational reports.
+                    &nbsp; <button class="learn-more-button" mat-button>Learn More</button>
+                </p>
+            </div>
+
+
+        </div>
+
+        <div class="profiler-options-container alternate-color-2">
+            <div class="profiler-option ">
+                <mat-checkbox [(ngModel)]="extractBusinessLogicSelected">Extract Business Logic</mat-checkbox>
+            </div>
+            <div class="profiler-description">
+                <p>Over the years, the application may have business logic that is hard to read and understand but needs
+                    to be preserved.
+                    &nbsp; <button class="learn-more-button" mat-button>Learn More</button>
+                </p>
+            </div>
+        </div>
+        <div class="profiler-options-container alternate-color-1">
+            <div class="profiler-option">
+                <mat-checkbox [(ngModel)]="identifyBusinessProcessesSelected">Identify Business Processes</mat-checkbox>
+            </div>
+            <div class="profiler-description">
+                <p>Evaluate if application has organized workflow, understand Level Zero Business Processes and other
+                    business automations and create flows.
+                    &nbsp; <button class="learn-more-button" mat-button>Learn More</button>
+                </p>
+            </div>
+        </div>
+        <div class="profiler-options-container alternate-color-2">
+            <div class="profiler-option">
+                <mat-checkbox [(ngModel)]="identifySecurityAndPerformanceIssuesSelected">Identify Security and
+                    Performance Issues</mat-checkbox>
+            </div>
+            <div class="profiler-description">
+                <p>Scan for potential security and performance issues within code, including SQL injections, cross site
+                    scripting, hard coded passwords, long running queries, unnecessary loops, etc.
+                    &nbsp; <button class="learn-more-button" mat-button>Learn More</button></p>
+            </div>
+        </div>
+        <div class="profiler-options-container alternate-color-1">
+            <div class="profiler-option">
+                <mat-checkbox [(ngModel)]="identifyIntegrationPointSelected">Identify Integration Point</mat-checkbox>
+            </div>
+            <div class="profiler-description">
+                <p>Identify 3rd party integration point and its complexity, as far as, number of calls to the same 3rd
+                    party, complexity of json/xml payloads being exchanged, sync vs call back endpoints, method of
+                    authentication, etc.
+                    &nbsp; <button class="learn-more-button" mat-button>Learn More</button>
+                </p>
+            </div>
+        </div>
+        <!-- Sixth Option: Database Analysis -->
+        <div class="profiler-options-container alternate-color-2">
+            <div class="profiler-option">
+                <mat-checkbox [(ngModel)]="databaseAnalysisSelected">Database Analysis</mat-checkbox>
+            </div>
+            <div class="profiler-description">
+                <p>Number of database tables, views, stored procedures and their complexity, number of lines of code,
+                    number of stored procedures more than 500 lines of code, proper use of indices, referential
+                    integrity enforced by primary and foreign keys, etc.
+                    &nbsp; <button class="learn-more-button" mat-button>Learn More</button>
+                </p>
+            </div>
+        </div>
+        <div class="profiler-options-container alternate-color-1">
+            <div class="profiler-option">
+                <mat-checkbox [(ngModel)]="codeCompatibilitySelected">Code Compatibility</mat-checkbox>
+            </div>
+            <div class="profiler-description">
+                <p>Is the code fit to auto-modernize to desired target source language, is current code fit for CI/CD,
+                    is
+                    current code fit for containerization, is the code fit for Microservice architecture, etc.
+                    &nbsp; <button class="learn-more-button" mat-button>Learn More</button>
+                </p>
+            </div>
+        </div>
+    </mat-card>
+</div>
+<br>
+<div class="button-container">
+    <button mat-button class="secondary-button" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon> Back
+    </button>
+    &nbsp; &nbsp; 
+    <button mat-raised-button color="primary" [routerLink]="['/profiler-results']" class="new-project-button">
+        <mat-icon>search</mat-icon> Run the Profiler
+    </button>
+</div>

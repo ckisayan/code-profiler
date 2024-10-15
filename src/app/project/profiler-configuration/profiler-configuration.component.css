@@ -1,0 +1,95 @@
+.secondary-button {
+    background-color: #f2e68e; 
+    color: #333; /* Dark text color for contrast */
+    padding: 10px; /* Padding for a better appearance */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .secondary-button:hover {
+    background-color: yellow; /* Slightly darker yellow on hover */
+    color: #000; /* Change text color to black on hover */
+  }
+.config-card {
+
+    width: 1000px;
+    margin: 20px auto;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    justify-content: space-between; /* Adjusts spacing between fields */  
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .config-form {    
+    width: 800px;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    justify-content: space-between; /* Adjusts spacing between fields */  
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .profiler-config-card {
+    padding: 20px;
+  }
+  
+  .profiler-options-container {
+    display: flex;
+    align-items: center; /* Align checkbox and text in the middle */
+    white-space: nowrap; /* Prevent wrapping between columns */
+    margin-bottom: 10px;
+  }
+  .profiler-title {
+    font-size: 2.500rem ;
+  }
+  .profiler-option {
+    flex: 1;
+    padding-right: 20px;
+    display: inline-block;
+    white-space: nowrap; /* Prevent wrapping inside the checkbox area */
+    font-size: 20px !important;
+  }
+
+  .profiler-description {
+    flex: 2;
+    display: inline-block;
+    white-space: normal; /* Prevent wrapping inside the description */
+    font-size: 1.125rem;
+    padding: 5px;
+  }
+  
+  p {
+    margin: 0;
+  }
+
+  .alternate-color-1 {
+    background-color: #f0f0f0; /* Light grey */
+    padding: 10px;
+  }
+  
+  .alternate-color-2 {
+    background-color: #e8f4ff; /* Light blue */
+    padding: 10px;
+  }
+  .learn-more-button {
+    background-color: transparent; /* No background color */
+    color: #007bff; /* Blue text color */
+    padding: 10px 20px; /* Add padding for better appearance */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    text-decoration: underline; /* Underline text */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect */
+  .learn-more-button:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    /*align-items: center;  Optional: if you want to center vertically inside the container */
+    /*height: 100vh;  Optional: makes the container full screen height if needed */
+  }

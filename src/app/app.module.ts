@@ -18,7 +18,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
-
+import { ProfilerConfigurationComponent } from './project/profiler-configuration/profiler-configuration.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ProfilerResultsComponent } from './project/profiler-results/profiler-results.component';
+import { ProfilerResultsSnapshotComponent } from './project/profiler-results-snapshot/profiler-results-snapshot.component';
+import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { ProfilerResultsComponentReportComponent } from './project/profiler-results-component-report/profiler-results-component-report.component';
+import { ProfilerResultsUxReportComponent } from './project/profiler-results-ux-report/profiler-results-ux-report.component';
+import { ProfilerResultsKnowledgeGraphComponent } from './project/profiler-results-knowledge-graph/profiler-results-knowledge-graph.component';
 const appRoutes: Routes = [{
   path: '', component: DashboardComponent,
   
@@ -30,7 +40,22 @@ const appRoutes: Routes = [{
   },
   {
     path: 'project-configuration', component: ProjectConfigurationComponent,
-  }
+  },
+  {
+    path: 'profiler-configuration', component: ProfilerConfigurationComponent,
+  },
+  {
+    path: 'profiler-results', component: ProfilerResultsComponent,
+    
+    children: [
+      {path: '', component: ProfilerResultsSnapshotComponent},
+      {path: 'snapshot', component: ProfilerResultsSnapshotComponent},
+      {path: 'component-report', component: ProfilerResultsComponentReportComponent},
+      {path: 'ux', component: ProfilerResultsUxReportComponent},
+      {path: 'knowledge-graph', component: ProfilerResultsKnowledgeGraphComponent},
+    ]
+  },
+
 
 ]
 
@@ -38,7 +63,13 @@ const appRoutes: Routes = [{
   declarations: [
     AppComponent,
     DashboardComponent,
-    ProjectConfigurationComponent
+    ProjectConfigurationComponent,
+    ProfilerConfigurationComponent,
+    ProfilerResultsComponent,
+    ProfilerResultsSnapshotComponent,
+    ProfilerResultsComponentReportComponent,
+    ProfilerResultsUxReportComponent,
+    ProfilerResultsKnowledgeGraphComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +86,8 @@ const appRoutes: Routes = [{
     MatInputModule,           // Import input module
     MatSelectModule,
     MatRadioModule,
+    MatCheckboxModule,
+    CdkAccordionModule,MatExpansionModule, MatSidenavModule,MatListModule
 
   ],
   providers: [],

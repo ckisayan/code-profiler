@@ -1,0 +1,86 @@
+.profiler-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+
+.cards-container {
+    display: flex;
+    justify-content: space-between; /* Space cards evenly */
+    margin-bottom: 20px; /* Space between rows */
+    width: 100%; /* Make sure it takes the full width */
+}
+
+.code-snapshot-card,
+.snapshot-card {
+    width: 45%; /* Adjust the width to fit two cards in a row */
+    margin: 0 10px; /* Optional margin for spacing between cards */
+}
+
+
+
+ 
+  
+  .snapshot-card, .code-snapshot-card {
+    flex: 0 1 45%; /* 45% width for each card */
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .snapshot-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .snapshot-item mat-icon {
+    margin-right: 10px;
+    color: #007bff;
+  }
+  
+  .mat-card-title {
+    font-size: 20px;
+    color: #444;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+
+  .severity-chart {
+    display: flex;
+    flex-direction: column;    
+    margin-top: 20px;
+    margin-left: auto; /* Move the chart to the right */
+    margin-right: 10%; /* Adjust margin to fine-tune positioning with second card */
+  }
+
+  canvas {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .severity-chart h2 {    
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .maintainability-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .maintainability-card ul li {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }

@@ -24,6 +24,9 @@ export class ProjectConfigurationComponent implements OnInit {
 
   // Options for Target System Type
   targetSystems: string[] = ['Angular', 'node.js', 'React', 'Java', '.NET', 'SAP S/4 HANA'];
+  storageAccounts: string[] = ['Storage Account 1', 'Storage Account 2', 'Storage Account 3']; // Example accounts
+  selectedStorageAccount: string = '';
+  
   
 
   ngOnInit(){
@@ -71,6 +74,14 @@ export class ProjectConfigurationComponent implements OnInit {
       this.selectedModelFile = file.name; // Get model file name
     }
   }
+  onStorageAccountSelect() {
+    if (this.selectedStorageAccount) {
+      console.log('Selected Storage Account:', this.selectedStorageAccount);
+    } else {
+      console.log('No storage account selected');
+    }
+  }
+
 
 
 }
