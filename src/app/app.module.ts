@@ -25,40 +25,45 @@ import { ProfilerResultsSnapshotComponent } from './project/profiler-results-sna
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { ProfilerResultsComponentReportComponent } from './project/profiler-results-component-report/profiler-results-component-report.component';
 import { ProfilerResultsUxReportComponent } from './project/profiler-results-ux-report/profiler-results-ux-report.component';
 import { ProfilerResultsKnowledgeGraphComponent } from './project/profiler-results-knowledge-graph/profiler-results-knowledge-graph.component';
 import { PreviousProfilerResultsComponent } from './project/previous-profiler-results/previous-profiler-results.component';
+import { StarterComponent } from './starter/starter.component';
+import { BusinessRulesResultsComponent } from './project/business-rules-results/business-rules-results.component';
+import { HighlightPipe } from './highlight.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { BusinessRulesSourceCodeComponent } from './project/business-rules-source-code/business-rules-source-code.component';
+import { BusinessRulesExplainedComponent } from './project/business-rules-explained/business-rules-explained.component';
 const appRoutes: Routes = [{
-  path: '', component: DashboardComponent,
-  
-  
-  children: [
-      { path: '', component: DashboardComponent },
-    ],
+  path: '', component: StarterComponent,
+},
+{
+  path: 'dashboard', component: DashboardComponent,
+},
 
-  },
-  {
-    path: 'project-configuration', component: ProjectConfigurationComponent,
-  },
-  {
-    path: 'previous-profiler-results', component: PreviousProfilerResultsComponent,
-  },
-  {
-    path: 'profiler-configuration', component: ProfilerConfigurationComponent,
-  },
-  {
-    path: 'profiler-results', component: ProfilerResultsComponent,
-    
-    children: [
-      {path: '', component: ProfilerResultsSnapshotComponent},
-      {path: 'snapshot', component: ProfilerResultsSnapshotComponent},
-      {path: 'component-report', component: ProfilerResultsComponentReportComponent},
-      {path: 'ux', component: ProfilerResultsUxReportComponent},
-      {path: 'knowledge-graph', component: ProfilerResultsKnowledgeGraphComponent},
-    ]
-  },
+{
+  path: 'project-configuration', component: ProjectConfigurationComponent,
+},
+{
+  path: 'previous-profiler-results', component: PreviousProfilerResultsComponent,
+},
+{
+  path: 'profiler-configuration', component: ProfilerConfigurationComponent,
+},
+{
+  path: 'profiler-results', component: ProfilerResultsComponent,
+
+  children: [
+    { path: '', component: ProfilerResultsSnapshotComponent },
+    { path: 'snapshot', component: ProfilerResultsSnapshotComponent },
+    { path: 'component-report', component: ProfilerResultsComponentReportComponent },
+    { path: 'business-rules', component: BusinessRulesResultsComponent },
+    { path: 'ux', component: ProfilerResultsUxReportComponent },
+    { path: 'knowledge-graph', component: ProfilerResultsKnowledgeGraphComponent },
+  ]
+},
 
 
 ]
@@ -74,7 +79,12 @@ const appRoutes: Routes = [{
     ProfilerResultsComponentReportComponent,
     ProfilerResultsUxReportComponent,
     ProfilerResultsKnowledgeGraphComponent,
-    PreviousProfilerResultsComponent
+    PreviousProfilerResultsComponent,
+    StarterComponent,
+    BusinessRulesResultsComponent,
+    HighlightPipe,
+    BusinessRulesSourceCodeComponent,
+    BusinessRulesExplainedComponent
   ],
   imports: [
     BrowserModule,
@@ -86,13 +96,14 @@ const appRoutes: Routes = [{
     MatIconModule,
     MatRippleModule,
     RouterModule.forRoot(appRoutes),
-    NgChartsModule,       
+    NgChartsModule,
     MatFormFieldModule,       // Import form field module
     MatInputModule,           // Import input module
     MatSelectModule,
     MatRadioModule,
     MatCheckboxModule,
-    CdkAccordionModule,MatExpansionModule, MatSidenavModule,MatListModule
+    CdkAccordionModule, MatExpansionModule, MatSidenavModule, MatListModule,
+    HttpClientModule
 
   ],
   providers: [],

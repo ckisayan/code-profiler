@@ -1,0 +1,6 @@
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    /*align-items: center;  Optional: if you want to center vertically inside the container */
+    /*height: 100vh;  Optional: makes the container full screen height if needed */
+  }
