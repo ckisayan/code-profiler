@@ -1,0 +1,179 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional System Use Cases</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #3498db;;
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #dff9fb;;
+            color: #2c3e50;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-top: 30px;
+            color: #007bff;
+            text-align: left;
+        }
+        .includes {
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Functional System Use Cases</h1>
+
+    <div class="use-case">
+        <h2 class="section-title">Use Case 1: Display Shipment Subfile</h2>
+        <table>
+            <tr>
+                <th>Description</th>
+                <td>Display a subfile of shipment records on the screen.</td>
+            </tr>
+            <tr>
+                <th>Primary Actor</th>
+                <td>User</td>
+            </tr>
+            <tr>
+                <th>Preconditions</th>
+                <td>
+                    <ul>
+                        <li>The <code>ShipPf</code> file must contain shipment records.</li>
+                        <li>The <code>Shipdspf1</code> display file must be available.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Main Flow</th>
+                <td>
+                    <ol>
+                        <li>User initiates the display of shipment records.</li>
+                        <li>System clears the subfile.</li>
+                        <li>System loads shipment records from <code>ShipPf</code> into the subfile.</li>
+                        <li>System displays the subfile control record.</li>
+                        <li>User can navigate through the subfile pages.</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <th>Postconditions</th>
+                <td>Shipment records are displayed on the screen.</td>
+            </tr>
+            <tr>
+                <th>Includes</th>
+                <td class="includes">Clear Subfile, Load Subfile</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="use-case">
+        <h2 class="section-title">Use Case 2: Add New Shipment Record</h2>
+        <table>
+            <tr>
+                <th>Description</th>
+                <td>Add a new shipment record to the <code>ShipPf</code> file.</td>
+            </tr>
+            <tr>
+                <th>Primary Actor</th>
+                <td>User</td>
+            </tr>
+            <tr>
+                <th>Preconditions</th>
+                <td>
+                    <ul>
+                        <li>The <code>ShipPf</code> file must be available.</li>
+                        <li>The <code>Shipdspf1</code> display file must be available.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Main Flow</th>
+                <td>
+                    <ol>
+                        <li>User selects the option to add a new shipment.</li>
+                        <li>System displays the add record window.</li>
+                        <li>User enters shipment details (ID, Description, Date).</li>
+                        <li>System validates the entered details.</li>
+                        <li>If validation passes, system writes the new record to <code>ShipPf</code>.</li>
+                        <li>System displays a success message.</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <th>Postconditions</th>
+                <td>A new shipment record is added to the <code>ShipPf</code> file.</td>
+            </tr>
+            <tr>
+                <th>Includes</th>
+                <td class="includes">Validate Shipment Details</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="use-case">
+        <h2 class="section-title">Use Case 3: Display Customer Order Entry & Change Menu</h2>
+        <table>
+            <tr>
+                <th>Description</th>
+                <td>Display the menu for customer order entry and change.</td>
+            </tr>
+            <tr>
+                <th>Primary Actor</th>
+                <td>User</td>
+            </tr>
+            <tr>
+                <th>Preconditions</th>
+                <td>
+                    <ul>
+                        <li>The <code>custord</code> display file must be available.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Main Flow</th>
+                <td>
+                    <ol>
+                        <li>User initiates the display of the customer order menu.</li>
+                        <li>System displays the customer order entry & change menu.</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <th>Postconditions</th>
+                <td>The customer order entry & change menu is displayed.</td>
+            </tr>
+        </table>
+    </div>
+</body>
+

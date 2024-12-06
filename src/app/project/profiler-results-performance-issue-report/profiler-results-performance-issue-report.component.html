@@ -1,0 +1,106 @@
+<head>
+    <title>AS400 Performance Issue Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #dff9fb;
+        }
+    </style>
+</head>
+<body>
+    <h2>AS400 Performance Issue Report</h2>
+
+    <h3>Overview</h3>
+    <p>This report identifies potential performance bottlenecks within the provided AS400 source code. By addressing these issues, significant performance improvements can be realized.</p>
+
+    <h3>Key Performance Bottlenecks</h3>
+    <ul>
+        <li>Inefficient Stored Proc vs Dynamic SQL</li>
+        <li>Poor Subroutine Inefficiencies, Redundant Code</li>
+        <li>Display File Performance</li>
+        <li>I/O Bottlenecks</li>
+    </ul>
+
+    <h3>Specific Recommendations</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Issue</th>
+                <th>Recommendation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Shipdspf1</td>
+                <td>Inconsistent Use of Colors, Hardcoded Text Strings, Missing Error Handling</td>
+                <td>Standardize color scheme, use constants or message files, implement error handling.</td>
+            </tr>
+            <tr>
+                <td>custbatch</td>
+                <td>Unhandled Errors in Select Statements, Inefficient String Operations, Hardcoded Customer Names</td>
+                <td>Add error handling, optimize string operations, use configuration file or database table for customer names.</td>
+            </tr>
+            <tr>
+                <td>ShipRPG1</td>
+                <td>Lack of Comments and Documentation, Inefficient Use of Subroutines, Hardcoded Field Values</td>
+                <td>Add comments and documentation, optimize subroutine usage, use constants or configuration files for field values.</td>
+            </tr>
+            <tr>
+                <td>custord</td>
+                <td>Inconsistent Use of Display Attributes, Hardcoded Text Strings</td>
+                <td>Standardize display attributes, use constants or message files for text strings.</td>
+            </tr>
+            <tr>
+                <td>mnumstrqq</td>
+                <td>Lack of Error Handling for Calls</td>
+                <td>Implement error handling for call statements.</td>
+            </tr>
+            <tr>
+                <td>mnumstr</td>
+                <td>Inconsistent Use of Display Attributes, Hardcoded Text Strings</td>
+                <td>Standardize display attributes, use constants or message files for text strings.</td>
+            </tr>
+            <tr>
+                <td>ShipPf</td>
+                <td>Lack of Field Descriptions</td>
+                <td>Add descriptions for fields.</td>
+            </tr>
+            <tr>
+                <td>CustOrdPf</td>
+                <td>Lack of Field Descriptions</td>
+                <td>Add descriptions for fields.</td>
+            </tr>
+            <tr>
+                <td>custordrpg</td>
+                <td>Lack of Comments and Documentation, Inefficient Use of Subroutines, Hardcoded Field Values</td>
+                <td>Add comments and documentation, optimize subroutine usage, use constants or configuration files for field values.</td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+    <h3>Conclusion</h3>
+    <p>By addressing the identified performance bottlenecks and following the recommended improvements, the overall performance of the AS400 system can be significantly enhanced. Regular code reviews and performance testing can help maintain high performance levels.</p>
+</body>

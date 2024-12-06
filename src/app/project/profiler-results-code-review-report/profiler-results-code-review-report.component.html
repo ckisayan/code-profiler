@@ -1,0 +1,129 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .severity-critical {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .severity-major {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        .severity-minor {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+        .severity-info {
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Code Review Report</h1>
+    <h2>Overview</h2>
+    <p>This document provides a detailed code review of the provided AS400 source code files. The review includes comments on code structure, readability, maintainability, and potential issues. Each comment is categorized by severity: <span class="severity-critical">Critical</span>, <span class="severity-major">Major</span>, <span class="severity-minor">Minor</span>, and <span class="severity-info">Informational</span>.</p>
+
+    <h2>Code Review Comments</h2>
+
+    <h3>1. File: Shipdspf1</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Comment</th>
+                <th>Severity</th>
+                <th>Lines</th>
+                <th>Description</th>
+                <th>Recommendation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Inconsistent Use of Colors</td>
+                <td class="severity-minor">Minor</td>
+                <td>27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47</td>
+                <td>The use of colors in the display file is inconsistent.</td>
+                <td>Standardize the color scheme across the display file.</td>
+            </tr>
+            <tr>
+                <td>Hardcoded Text Strings</td>
+                <td class="severity-minor">Minor</td>
+                <td>27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47</td>
+                <td>Hardcoded text strings make localization difficult.</td>
+                <td>Use constants or a message file for text strings.</td>
+            </tr>
+            <tr>
+                <td>Missing Error Handling for Display File</td>
+                <td class="severity-major">Major</td>
+                <td>1-50</td>
+                <td>No error handling for display file operations.</td>
+                <td>Implement error handling to provide user feedback in case of errors.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>2. File: custbatch</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Comment</th>
+                <th>Severity</th>
+                <th>Lines</th>
+                <th>Description</th>
+                <th>Recommendation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Unhandled Errors in Select Statements</td>
+                <td class="severity-major">Major</td>
+                <td>15-35</td>
+                <td>Errors in select statements are not handled.</td>
+                <td>Add error handling for unexpected customer names and balances.</td>
+            </tr>
+            <tr>
+                <td>Inefficient Use of String Operations</td>
+                <td class="severity-minor">Minor</td>
+                <td>15-35</td>
+                <td>Repetitive use of string functions within loops.</td>
+                <td>Optimize string operations for efficiency.</td>
+            </tr>
+            <tr>
+                <td>Hardcoded Customer Names</td>
+                <td class="severity-minor">Minor</td>
+                <td>15-35</td>
+                <td>Customer names are hardcoded.</td>
+                <td>Use a configuration file or database table.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Add additional sections for other files as necessary in similar format -->
+
+    <h2>Summary</h2>
+    <p>The provided AS400 source code files have several areas that can be improved for better readability, maintainability, and error handling. The most critical issues are the lack of error handling and the use of hardcoded values. Addressing these issues will make the code more robust and easier to maintain. Additionally, standardizing the use of display attributes and adding comments and documentation will improve the overall quality of the code.</p>
+</body>
+

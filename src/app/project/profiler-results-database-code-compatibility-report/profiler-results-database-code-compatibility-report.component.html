@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Compatibility Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #34495e;
+      color: #fff;
+      font-size: 1.1em;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ecf0f1;
+    }
+
+    tr:hover {
+      background-color: #f1c40f;
+    }
+
+    .section-title {
+      font-size: 1.5em;
+      color: #e67e22;
+      margin-top: 40px;
+      border-bottom: 2px solid #e67e22;
+      padding-bottom: 10px;
+    }
+
+    .compatibility-matrix {
+      margin-top: 30px;
+    }
+
+    .note {
+      font-size: 1em;
+      color: #7f8c8d;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    .recommendation {
+      background-color: #f39c12;
+      color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Database Compatibility Report</h1>
+    <p class="note">Migration Source: IBM DB2</p>
+    <p class="note">Migration Target Options: AWS PostgreSQL, Oracle, Microsoft SQL Server, Azure SQL, GCP Cloud SQL</p>
+
+    <div class="compatibility-matrix">
+      <h2 class="section-title">Compatibility Matrix</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature/Component</th>
+            <th>AWS PostgreSQL</th>
+            <th>Oracle</th>
+            <th>Microsoft SQL Server</th>
+            <th>Azure SQL</th>
+            <th>GCP Cloud SQL (PostgreSQL)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data Types</td>
+            <td>Compatible with DB2 types with minor adjustments (e.g., CHAR → VARCHAR)</td>
+            <td>Requires conversion (e.g., NUMBER → DECIMAL)</td>
+            <td>Similar to DB2, minor precision adjustments</td>
+            <td>Compatible with DB2, conversion required for specific types</td>
+            <td>Similar to PostgreSQL, slight adjustments</td>
+          </tr>
+          <tr>
+            <td>Stored Procedures</td>
+            <td>Refactor DB2 procedures to PL/pgSQL</td>
+            <td>Refactor DB2 procedures to PL/SQL</td>
+            <td>Refactor DB2 procedures to T-SQL</td>
+            <td>Refactor DB2 procedures to T-SQL</td>
+            <td>Refactor DB2 procedures to PL/pgSQL</td>
+          </tr>
+          <tr>
+            <td>Triggers</td>
+            <td>Compatible with minor changes</td>
+            <td>Trigger logic similar, syntax differences</td>
+            <td>Triggers need minor adjustments</td>
+            <td>Triggers compatible, minor changes</td>
+            <td>Compatible with minor changes</td>
+          </tr>
+          <tr>
+            <td>Functions</td>
+            <td>PL/pgSQL supported, refactor DB2 functions</td>
+            <td>PL/SQL required, refactor DB2 functions</td>
+            <td>T-SQL supported, refactor functions</td>
+            <td>T-SQL for stored procedures and functions</td>
+            <td>PL/pgSQL supported, refactor functions</td>
+          </tr>
+          <tr>
+            <td>Indexes</td>
+            <td>Compatible, adjust DB2-specific index types</td>
+            <td>Indexes similar, adjustments for methods</td>
+            <td>Similar, may need index method adjustments</td>
+            <td>Similar to SQL Server, adjustments needed</td>
+            <td>Compatible, adjustments for specific indexes</td>
+          </tr>
+          <tr>
+            <td>Foreign Keys & Constraints</td>
+            <td>Compatible with minor changes</td>
+            <td>Referential integrity during conversion</td>
+            <td>Similar, syntax adjustments</td>
+            <td>Compatible, minor adjustments</td>
+            <td>Compatible, minor adjustments</td>
+          </tr>
+          <tr>
+            <td>SQL Syntax</td>
+            <td>Minor differences (e.g., MERGE)</td>
+            <td>Syntax differences for MERGE and JOINs</td>
+            <td>Similar, minor adjustments</td>
+            <td>Similar, minor adjustments</td>
+            <td>Minor differences, adjustments needed</td>
+          </tr>
+          <tr>
+            <td>Data Migration Tools</td>
+            <td>AWS SCT, DMS</td>
+            <td>Oracle Data Pump, GoldenGate</td>
+            <td>SQL Server Migration Assistant (SSMA)</td>
+            <td>Azure DMS</td>
+            <td>GCP DMS</td>
+          </tr>
+          <tr>
+            <td>Security Features</td>
+            <td>IAM authentication, encryption</td>
+            <td>Advanced security features available</td>
+            <td>SQL Server security roles, encryption</td>
+            <td>SQL Server roles, encryption</td>
+            <td>Google Cloud IAM, encryption</td>
+          </tr>
+          <tr>
+            <td>Backup & Restore</td>
+            <td>PostgreSQL backup/restore compatible</td>
+            <td>RMAN backup/restore</td>
+            <td>SQL Server backup/restore</td>
+            <td>Azure SQL backup/restore</td>
+            <td>GCP Cloud SQL backup/restore</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="recommendation">
+      <h2>Recommendation</h2>
+      <p>After reviewing the compatibility matrix, the following steps are recommended for a smooth migration:</p>
+      <ul>
+        <li>Ensure data types are mapped correctly to the target database.</li>
+        <li>Refactor stored procedures and functions to match the target database syntax.</li>
+        <li>Test thoroughly to ensure data integrity, especially for triggers and foreign key relationships.</li>
+        <li>Utilize cloud-native tools such as AWS DMS, Oracle Data Pump, and GCP DMS for efficient migration.</li>
+        <li>After migration, optimize queries and perform performance tuning in the new database environment.</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

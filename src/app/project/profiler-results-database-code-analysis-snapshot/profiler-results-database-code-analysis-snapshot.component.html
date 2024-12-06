@@ -1,0 +1,195 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Code Analysis Snapshot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2em;
+    }
+
+    h2 {
+      color: #e67e22;
+      font-size: 1.5em;
+      margin-top: 40px;
+      border-bottom: 2px solid #e67e22;
+      padding-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #34495e;
+      color: #fff;
+      font-size: 1.1em;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ecf0f1;
+    }
+
+    tr:hover {
+      background-color: #f1c40f;
+    }
+
+    .metrics-table {
+      margin-top: 30px;
+    }
+
+    .performance-table {
+      margin-top: 30px;
+    }
+
+    .section-title {
+      font-size: 1.5em;
+      color: #e67e22;
+      margin-top: 40px;
+    }
+
+    .note {
+      font-size: 1em;
+      color: #7f8c8d;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    .highlight-box {
+      background-color: #f39c12;
+      color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Database Code Analysis Snapshot</h1>
+    <p class="note">This report provides an overview of the database code structure, utilization, and performance metrics.</p>
+
+    <!-- Database Metrics Section -->
+    <h2>Database Structure & Code Overview</h2>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Number of Databases</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Size of Databases</td>
+          <td>1 TB</td>
+        </tr>
+        <tr>
+          <td>Number of Tables</td>
+          <td>250</td>
+        </tr>
+        <tr>
+          <td>Average Number of Columns per Table</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Average Number of Records per Table</td>
+          <td>1,000,000</td>
+        </tr>
+        <tr>
+          <td>Stored Procedures</td>
+          <td>158</td>
+        </tr>
+        <tr>
+          <td>Average Lines of Code in Stored Procedures</td>
+          <td>350</td>
+        </tr>
+        <tr>
+          <td>Triggers</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>User Defined Functions</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>User Defined Types</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td>Code Readability Score</td>
+          <td>85%</td>
+        </tr>
+        <tr>
+          <td>Cyclomatic Complexity</td>
+          <td>5.3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Performance Metrics Section -->
+    <h2>Performance & Hardware Utilization</h2>
+    <table class="performance-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Database Server Hardware Configuration</td>
+          <td>16 CPUs, 64 GB RAM, 2 TB Storage</td>
+        </tr>
+        <tr>
+          <td>Daily Average Utilization</td>
+          <td>75% CPU, 65% RAM, 80% Disk</td>
+        </tr>
+        <tr>
+          <td>Legacy Code Presence</td>
+          <td>30% of Code</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Highlight Box for Key Insights -->
+    <div class="highlight-box">
+      <p><strong>Key Insight:</strong> The databases have a good balance between size and structure. However, high cyclomatic complexity and the presence of legacy code are areas for optimization. Regular code refactoring and performance tuning should be prioritized.</p>
+    </div>
+  </div>
+
+</body>
+

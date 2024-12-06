@@ -17,12 +17,12 @@ namespace SupplyChain.BusinessLogic
             NewVendorRuleViolationResponse ruleResponse = new();
             Rule rule = ApplyPricingRules(newVendorDetails.VendorDetails);
 
-            if (string.IsNullOrEmpty( rule.RuleId))
+            if (!string.IsNullOrEmpty(rule.RuleId))
             {
                 ruleResponse.Rules.Add(rule);
             }
             List<Rule> rules = CheckStateCompliance(newVendorDetails.VendorDetails);
-            if (rules is not null && rules.Count> 0)
+            if (rules is not null && rules.Count > 0)
             {
                 foreach (Rule r in rules)
                 {

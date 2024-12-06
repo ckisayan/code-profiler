@@ -1,0 +1,20 @@
+svg {
+    border: 1px solid #ddd;
+  }
+  
+  .link {
+    stroke: #888;
+  }
+  
+  .node circle {
+    fill: #6c5ce7;
+    stroke: #333;
+    stroke-width: 2px;
+  }
+  
+  .node text {
+    font-size: 12px;
+    font-family: sans-serif;
+    fill: #333;
+  }
+  

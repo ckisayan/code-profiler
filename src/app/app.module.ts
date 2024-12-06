@@ -36,13 +36,37 @@ import { HighlightPipe } from './highlight.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { BusinessRulesSourceCodeComponent } from './project/business-rules-source-code/business-rules-source-code.component';
 import { BusinessRulesExplainedComponent } from './project/business-rules-explained/business-rules-explained.component';
+import { D3ChartComponent } from './d3-chart/d3-chart.component';
+import { UxDiagramSampleComponent } from './d3-chart/ux-diagram-sample.component';
+import {UxDiagramComponent} from './ux-diagram/ux-diagram.component';
+import { ProfilerResultsDomainModelComponent } from './project/profiler-results-domain-model/profiler-results-domain-model.component';
+import { ProfilerResultsAnalysisReportComponent } from './project/profiler-results-analysis-report/profiler-results-analysis-report.component';
+import { ProfilerResultsCodeReviewReportComponent } from './project/profiler-results-code-review-report/profiler-results-code-review-report.component';
+import { ProfilerResultsUseCaseReportComponent } from './project/profiler-results-use-case-report/profiler-results-use-case-report.component';
+import { ProfilerResultsPerformanceIssueReportComponent } from './project/profiler-results-performance-issue-report/profiler-results-performance-issue-report.component';
+import { ProfilerResultsSecurityIssueReportComponent } from './project/profiler-results-security-issue-report/profiler-results-security-issue-report.component';
+import { ProfilerResultsIntegrationReportComponent } from './project/profiler-results-integration-report/profiler-results-integration-report.component';
+import { ProfilerResultsProcessMapReportComponent } from './project/profiler-results-process-map-report/profiler-results-process-map-report.component';
+import { ProfilerResultsDatabaseCodeReviewReportComponent } from './project/profiler-results-database-code-review-report/profiler-results-database-code-review-report.component';
+import { ProfilerResultsDatabaseCodeCompatibilityReportComponent } from './project/profiler-results-database-code-compatibility-report/profiler-results-database-code-compatibility-report.component';
+import { ProfilerResultsDatabaseCodeAnalysisSnapshotComponent } from './project/profiler-results-database-code-analysis-snapshot/profiler-results-database-code-analysis-snapshot.component'
+
+
 const appRoutes: Routes = [{
   path: '', component: StarterComponent,
 },
 {
   path: 'dashboard', component: DashboardComponent,
 },
-
+{
+  path: 'd3component', component: D3ChartComponent,
+},
+{
+  path: 'd3uxcomponent', component: UxDiagramSampleComponent,
+},
+{
+  path: 'uxdiagram', component: UxDiagramComponent,
+},
 {
   path: 'project-configuration', component: ProjectConfigurationComponent,
 },
@@ -62,6 +86,19 @@ const appRoutes: Routes = [{
     { path: 'business-rules', component: BusinessRulesResultsComponent },
     { path: 'ux', component: ProfilerResultsUxReportComponent },
     { path: 'knowledge-graph', component: ProfilerResultsKnowledgeGraphComponent },
+    { path: 'domain-model', component: ProfilerResultsDomainModelComponent },
+    { path: 'analysis-report', component: ProfilerResultsAnalysisReportComponent },
+    { path: 'code-review-report', component: ProfilerResultsCodeReviewReportComponent },
+    { path: 'use-case-report', component: ProfilerResultsUseCaseReportComponent },
+    { path: 'performance-issue-report', component: ProfilerResultsPerformanceIssueReportComponent },
+    { path: 'security-issues-report', component: ProfilerResultsSecurityIssueReportComponent },
+    { path: 'integration-report', component: ProfilerResultsIntegrationReportComponent },
+    { path: 'process-map-report', component: ProfilerResultsProcessMapReportComponent },
+    { path: 'database-code-review', component: ProfilerResultsDatabaseCodeReviewReportComponent },
+    { path: 'database-compatibility', component: ProfilerResultsDatabaseCodeCompatibilityReportComponent },
+    { path: 'database-profiler-snapshot', component: ProfilerResultsDatabaseCodeAnalysisSnapshotComponent },
+    
+    
   ]
 },
 
@@ -84,7 +121,22 @@ const appRoutes: Routes = [{
     BusinessRulesResultsComponent,
     HighlightPipe,
     BusinessRulesSourceCodeComponent,
-    BusinessRulesExplainedComponent
+    BusinessRulesExplainedComponent,
+    D3ChartComponent,
+    UxDiagramSampleComponent,
+    UxDiagramComponent,
+    ProfilerResultsDomainModelComponent,
+    ProfilerResultsAnalysisReportComponent,
+    ProfilerResultsCodeReviewReportComponent,
+    ProfilerResultsUseCaseReportComponent,
+    ProfilerResultsPerformanceIssueReportComponent,
+    ProfilerResultsSecurityIssueReportComponent,
+    ProfilerResultsIntegrationReportComponent,
+    ProfilerResultsProcessMapReportComponent,
+    ProfilerResultsDatabaseCodeReviewReportComponent,
+    ProfilerResultsDatabaseCodeCompatibilityReportComponent,
+    ProfilerResultsDatabaseCodeAnalysisSnapshotComponent
+    
   ],
   imports: [
     BrowserModule,

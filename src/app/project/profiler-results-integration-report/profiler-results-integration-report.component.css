@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Adjust as needed */
+    gap: 20px;
+}
+
+.system {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.connection {
+    position: absolute;
+    border: 1px dashed #ccc;
+}

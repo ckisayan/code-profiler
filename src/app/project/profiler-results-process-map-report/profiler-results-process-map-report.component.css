@@ -1,0 +1,39 @@
+/* profiler-results-process-map-report.component.css */
+.workflow-container {
+    
+    margin: 20px;
+    margin-left: 40px;
+  }
+  
+  .workflow-map {
+    margin-top: 20px;
+    margin-left: 60px;
+  }
+  
+  .stage {
+    cursor: pointer;
+  }
+  
+  .arrow {
+    pointer-events: none;
+  }
+  
+  .stage-label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Add this to your component's CSS file */
+.chart-container {
+    display: flex;
+    justify-content: center;  /* Horizontally center the SVG */
+    align-items: center;      /* Vertically center the SVG */
+    height: 100vh;            /* Full viewport height */
+    width: 100%;              /* Full width */
+  }
+  
+  svg {
+    /* Optional: Ensure there's enough space around the SVG */
+    margin: auto;
+  }
+  

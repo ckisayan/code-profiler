@@ -1,0 +1,107 @@
+<head>
+    <title>AS400 Security Issue Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #dff9fb;
+        }
+    </style>
+</head>
+<body>
+    <h2>AS400 Security Issue Report</h2>
+
+    <h3>Overview</h3>
+    <p>This report identifies potential security vulnerabilities within the provided AS400 source code. Addressing these vulnerabilities will help protect the system from unauthorized access, data breaches, and other security threats.</p>
+
+    <h3>Key Security Issues</h3>
+    <ul>
+        <li>Insecure Password Storage</li>
+        <li>Input Validation and Sanitization</li>
+        <li>Session Management</li>
+        <li>Access Control</li>
+        <li>Error Handling and Logging</li>
+        <li>Secure Coding Practices</li>
+    </ul>
+
+    <h3>Specific Recommendations</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Issue</th>
+                <th>Recommendation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Shipdspf1</td>
+                <td>Insecure Data Transmission, Input Validation</td>
+                <td>Ensure secure data transmission, validate user input.</td>
+            </tr>
+            <tr>
+                <td>custbatch</td>
+                <td>SQL Injection Prevention, Error Handling</td>
+                <td>Use parameterized queries or prepared statements, implement proper error handling.</td>
+            </tr>
+            <tr>
+                <td>ShipRPG1</td>
+                <td>Secure File Permissions, Input Validation</td>
+                <td>Set appropriate file permissions, validate user input.</td>
+            </tr>
+            <tr>
+                <td>custord</td>
+                <td>Secure Data Transmission, Input Validation</td>
+                <td>Ensure secure data transmission, validate user input.</td>
+            </tr>
+            <tr>
+                <td>mnumstrqq</td>
+                <td>Secure Program Calls</td>
+                <td>Ensure called programs are secure.</td>
+            </tr>
+            <tr>
+                <td>mnumstr</td>
+                <td>Input Validation</td>
+                <td>Validate user input.</td>
+            </tr>
+            <tr>
+                <td>ShipPf</td>
+                <td>Secure File Permissions</td>
+                <td>Set appropriate file permissions.</td>
+            </tr>
+            <tr>
+                <td>CustOrdPf</td>
+                <td>Secure File Permissions</td>
+                <td>Set appropriate file permissions.</td>
+            </tr>
+            <tr>
+                <td>custordrpg</td>
+                <td>Input Validation, Secure Data Storage</td>
+                <td>Validate user input, ensure secure data storage.</td>
+            </tr>
+            </tbody>
+    </table>
+
+    <h3>Conclusion</h3>
+    <p>By addressing the identified security vulnerabilities and following best practices, you can significantly enhance the security posture of your AS400 system. Regular security audits and vulnerability assessments are essential to identify and mitigate emerging threats.</p>
+</body>

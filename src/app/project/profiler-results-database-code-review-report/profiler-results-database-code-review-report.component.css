@@ -1,0 +1,82 @@
+p, li, h2, h3 {
+  text-align: left;
+}
+.report-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  color: #333; /* Default text color */
+}
+
+.report-title {
+  text-align: left;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #007bff; /* Title color */
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #0056b3; /* Section title color */
+}
+
+.finding {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-left: 5px solid #007bff; /* Blue border for each finding */
+  background-color: #f9f9f9; /* Light background */
+}
+
+.finding h3 {
+  font-size: 1.2em;
+  margin-top: 0;
+  color: #333;
+}
+
+.finding p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f8ff; /* Light blue background for headers */
+  color: #0056b3; /* Dark blue text color */
+}
+
+tr:nth-child(even) {
+  background-color: #f7f7f7; /* Alternate row colors for better readability */
+}
+
+tr:hover {
+  background-color: #e0f7fa; /* Light blue highlight on row hover */
+}
+
+.conclusion {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #2c3e50; /* Darker color for conclusion */
+}
+
+.conclusion p {
+  font-size: 1em;
+  line-height: 1.6;
+}

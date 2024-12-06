@@ -1,0 +1,9 @@
+.chart-container {
+    margin: 0 auto;
+    text-align: center;
+  }
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
+  
